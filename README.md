@@ -8,11 +8,23 @@ To write a program to find the LU Decomposition of a matrix.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
- 1. Import numpy library using import statement.
- 2. From scipy package import lu().
- 3. Get input from user and pass it as an array.
- 4. Get P,L,U matric using lu().
- 5. Print L and U matrix
+ Step 1: Start with the Matrix ( A )
+Take the square matrix ( A ) (of order ( n )).
+Create empty matrices ( L ) (lower triangular) and ( U ) (upper triangular).
+
+### Step 2: Compute Elements of ( L ) and ( U )
+For each row ( i ) (from ( 1 ) to ( n )):
+Calculate ( Ui][j] ) for ( j \geq i ): [ Ui][j] = Ai][j] - \sum_{k=1}^{i-1} Li][k] \cdot Uk][j] ]
+Calculate ( Li][j] ) for ( j < i ): [ Li][j] = \frac{Ai][j] - \sum_{k=1}^{j-1} Li][k] \cdot Uk][j]}{Uj][j]} ]
+Diagonal of ( L ): Set ( Li][i] = 1 ).
+
+### Step 3: Loop Through All Rows
+Repeat Step 2 for all rows of ( A ) until ( L ) and ( U ) are fully filled.
+
+### Step 4 :
+The matrix ( A ) is expressed as ( A = LU ), where:- ( L ) is a lower triangular matrix with ( 1 )s on the diagonal.
+( U ) is an upper triangular matrix.
+
 
 ## Program:
 (i) To find the L and U matrix
