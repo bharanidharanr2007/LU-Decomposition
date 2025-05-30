@@ -8,22 +8,27 @@ To write a program to find the LU Decomposition of a matrix.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-### Step 1: Start with the Matrix ( A )
-Take the square matrix ( A ) (of order ( n )).
-Create empty matrices ( L ) (lower triangular) and ( U ) (upper triangular).
+To find the L and U matrix
+Algorithm
+Step 1: Start the Program
+Step 2: numpy for matrix creation and handling.
+Step 3: scipy.linalg.lu for LU decomposition.
+Step 4: Input the Matrix
+Step 5: Take the square matrix A as input.
+Step 6: Use eval(input()) to allow entry in Python list format (e.g., [[2,3],[4,5]]).
+Step 7: Use lu(A) from SciPy
+(ii) To find the LU Decomposition of a matrix
+Algorithm
+Step 1: Start the Program
+Step 2: numpy for matrix input and handling.
+Step 3: lu_factor and lu_solve from scipy.linalg for LU decomposition and solving.
+Step 4: Input the coefficient matrix A (square matrix).
+Step 5: Input the right-hand side vector or matrix B.
+Step 6: Use lu_factor(A) to compute:
+LU: combined LU decomposition matrix, PV: pivot indices for row permutations.
 
-### Step 2: Compute Elements of ( L ) and ( U )
-For each row ( i ) (from ( 1 ) to ( n )):
-Calculate ( Ui][j] ) for ( j \geq i ): [ Ui][j] = Ai][j] - \sum_{k=1}^{i-1} Li][k] \cdot Uk][j] ]
-Calculate ( Li][j] ) for ( j < i ): [ Li][j] = \frac{Ai][j] - \sum_{k=1}^{j-1} Li][k] \cdot Uk][j]}{Uj][j]} ]
-Diagonal of ( L ): Set ( Li][i] = 1 ).
-
-### Step 3: Loop Through All Rows
-Repeat Step 2 for all rows of ( A ) until ( L ) and ( U ) are fully filled.
-
-### Step 4 :
-The matrix ( A ) is expressed as ( A = LU ), where:- ( L ) is a lower triangular matrix with ( 1 )s on the diagonal.
-( U ) is an upper triangular matrix.
+Step 7: Use lu_solve((PV, LU), B) to solve the system Ax = B.
+Step 8: Output the result vector x which solves Ax = B.
 
 
 ## Program:
