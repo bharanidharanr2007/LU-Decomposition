@@ -30,6 +30,7 @@ LU: combined LU decomposition matrix, PV: pivot indices for row permutations.
 
 Step 7: Use lu_solve((PV, LU), B) to solve the system Ax = B.
 Step 8: Output the result vector x which solves Ax = B.
+```
 
 
 ## Program:
